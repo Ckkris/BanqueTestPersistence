@@ -11,25 +11,25 @@ import javax.persistence.*;
 public class Client {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)   Optionnel
     @Column(name = "login")
-    private String login;
+    private String Login;
     @Column(name = "nom")
-    private String nom;
+    private String Nom;
     @Column(name = "prenom")
-    private String prenom;
+    private String Prenom;
 
     protected Client() {
     }
 
     public Client( String nom, String prenom) {
-        this.prenom = prenom;
-        this.nom = nom;
+        this.Prenom = prenom;
+        this.Nom = nom;
     }
 
     @Override
     public String toString() {
-        return String.format("Client[login=%d, nom='%s', prenom='%s']", login, nom, prenom);
+        return String.format("Client[login='%s', nom='%s', prenom='%s']", Login, Nom, Prenom); //Indispensable pour utiliser la méthode finAll()
     }
 
 }
